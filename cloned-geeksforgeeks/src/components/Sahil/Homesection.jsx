@@ -26,7 +26,7 @@ const HomeSection = ({ selectedTopic }) => {
 
     return (
         <div className="w-[78%] p-6 mt-5">
-            <h1 className="text-2xl font-bold  underline underline-offset-4">{selectedTopic}</h1>
+            <h1 className=" text-red-700 text-2xl font-bold  underline underline-offset-4">{selectedTopic}</h1>
             <p className="mt-4 text-lg text-gray-700">{content[selectedTopic]}</p>
             <br />
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis aliquid quos sequi commodi quam optio? Consequuntur totam unde vitae accusamus quos blanditiis optio placeat eius sed molestiae dolorum cumque saepe dolorem sunt, ab, provident pariatur obcaecati in corporis ducimus adipisci. Temporibus voluptatem magnam rerum nihil debitis quos, architecto sed quia praesentium ut assumenda ipsa in officia accusantium dolores, quidem veritatis quae hic porro explicabo repellendus inventore ratione. Mollitia fugit cum eaque, doloribus laboriosam ullam aspernatur fuga, explicabo omnis eius minima quae, magni nesciunt qui fugiat? Nesciunt, illum. Doloremque, ullam. Ut, excepturi. Expedita alias quia laboriosam. Maiores voluptas omnis magni assumenda.</p>
