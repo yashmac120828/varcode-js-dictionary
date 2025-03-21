@@ -32,36 +32,39 @@ const SubNav = () => {
   };
 
   return (
-    <nav className="relative bg-gray-800 text-white py-2 px-4 shadow-md flex items-center">
+    <nav className="relative bg-gray-800 text-white py-2 px-4 shadow-md flex items-center overflow-hidden">
+      {/* Left Scroll Button */}
       <button
-        className="absolute left-0 px-2 py-1 rounded-md z-10"
+        className="absolute left-0 px-2 py-1 rounded-md bg-gray-900 bg-opacity-50 text-white z-10 hover:bg-opacity-70 transition"
         onClick={() => scrollNav("left")}
       >
         <FaChevronLeft size={20} />
       </button>
 
+      {/* Scrollable Nav Links */}
       <div
         ref={navRef}
-        className="flex space-x-4 overflow-x-auto whitespace-nowrap px-10 scrollbar-hide"
+        className="flex space-x-4 overflow-x-auto px-10 scrollbar-hide"
         style={{
           scrollBehavior: "smooth",
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
+          scrollbarWidth: "none", // For Firefox
+          msOverflowStyle: "none", // For IE/Edge
         }}
       >
         {subNavLinks.map((link, index) => (
           <Link
             key={index}
             to={link.path}
-            className="hover:bg-gray-700 px-4 py-2 rounded-md transition"
+            className="hover:bg-gray-700 px-4 py-2 rounded-md transition whitespace-nowrap"
           >
             {link.name}
           </Link>
         ))}
       </div>
 
+      {/* Right Scroll Button */}
       <button
-        className="absolute right-0 px-2 py-1 rounded-md z-10"
+        className="absolute right-0 px-2 py-1 rounded-md bg-gray-900 bg-opacity-50 text-white z-10 hover:bg-opacity-70 transition"
         onClick={() => scrollNav("right")}
       >
         <FaChevronRight size={20} />
