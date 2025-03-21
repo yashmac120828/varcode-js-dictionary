@@ -12,8 +12,8 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="py-3 pl-0 pr-0 min-w-40 w-[20%] border-r border-gray-200 h-screen bg-white">
-      <h2 className="p-2 text-2xl font-bold text-red-600 border-b border-gray-300 sticky top-0 bg-white">
+    <div className="py-1 pl-0 pr-0 min-w-40 w-[20%] border-r border-gray-200 h-screen bg-white">
+      <h2 className="p-2 pl-2 text-2xl font-bold text-red-600 border-b border-gray-300 sticky top-0 bg-white">
         varCODE HTML Tutorial
       </h2>
 

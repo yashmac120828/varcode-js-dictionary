@@ -32,7 +32,7 @@ const SubNav = () => {
   };
 
   return (
-    <nav className="relative bg-gray-800 text-white py-2 px-4 shadow-md flex items-center overflow-hidden">
+    <nav className="relative bg-gray-800  text-white py-2 px-4 shadow-md flex items-center overflow-hidden">
       {/* Left Scroll Button */}
       <button
         className="absolute left-0 px-2 py-1 rounded-md bg-gray-900 bg-opacity-50 text-white z-10 hover:bg-opacity-70 transition"

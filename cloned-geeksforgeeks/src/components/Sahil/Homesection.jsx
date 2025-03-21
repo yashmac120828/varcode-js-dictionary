@@ -35,7 +35,7 @@ const HomeSection = ({ selectedTopic }) => {
   };
 
     return (
-        <div className="w-[78%] p-6 mt-5">
+        <div className="w-[78%] p-6">
             <h1 className="text-2xl font-bold  underline underline-offset-4">{selectedTopic}</h1>
             <p className="mt-4 text-lg text-gray-700">{content[selectedTopic]}</p>
             <br />
