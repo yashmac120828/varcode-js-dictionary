@@ -35,7 +35,7 @@ const HomeSection = ({ selectedTopic }) => {
   };
 
   return (
-    <div className="w-[78%] p-6 mt-5">
+    <div className="flex flex-row w-[80%] p-6 mt-5">
       <h1 className="text-2xl font-bold  underline underline-offset-4">
         {selectedTopic}
       </h1>
@@ -53,19 +53,6 @@ const HomeSection = ({ selectedTopic }) => {
         fuga, explicabo omnis eius minima quae, magni nesciunt qui fugiat?
         Nesciunt, illum. Doloremque, ullam. Ut, excepturi. Expedita alias quia
         laboriosam. Maiores voluptas omnis magni assumenda.
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla earum
-        voluptatum, nihil magnam fugit quisquam incidunt facilis ab enim nemo
-        cum? Illum, qui numquam perferendis laboriosam quod aut magni nisi vel
-        ullam illo. Fuga dolorem voluptate unde aspernatur praesentium nemo
-        saepe repudiandae adipisci illo a, necessitatibus, vero sapiente aut
-        dolorum voluptates temporibus inventore ad ut consequuntur in.
-        Reprehenderit, consectetur! Officiis, quam assumenda. Qui eos et, amet
-        quis sint id maiores iusto? Sunt error facilis corporis, quaerat, omnis
-        consequuntur dolorem veritatis voluptates odit maiores et ipsam dolore
-        libero distinctio illum inventore sed cumque totam est ratione illo ex
-        odio? Blanditiis, sapiente.
       </p>
     </div>
   );

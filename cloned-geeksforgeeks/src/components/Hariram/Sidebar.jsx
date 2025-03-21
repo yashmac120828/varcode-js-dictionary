@@ -1,143 +1,37 @@
-import React, { useState } from "react";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
+import htmlTopics from "../../utils/HTMLSidebar";
 
-const Sidebar = ({ setSelectedTopic }) => {
-  const jsTopics = [
-    {
-      title: "JavaScript Basics",
-      subtopics: ["Introduction", "Syntax", "Hello World"],
-    },
-    {
-      title: "JS Variables & Datatypes",
-      subtopics: ["var, let, const", "Primitive Types", "Type Conversion"],
-    },
-    {
-      title: "JS Operators",
-      subtopics: ["Arithmetic", "Comparison", "Logical"],
-    },
-    { title: "JS Loops", subtopics: ["for", "while", "do-while"] },
-    {
-      title: "JS Functions",
-      subtopics: ["Function Declaration", "Arrow Functions", "Callbacks"],
-    },
-    {
-      title: "JavaScript Basics",
-      subtopics: ["Introduction", "Syntax", "Hello World"],
-    },
-    {
-      title: "JS Variables & Datatypes",
-      subtopics: ["var, let, const", "Primitive Types", "Type Conversion"],
-    },
-    {
-      title: "JS Operators",
-      subtopics: ["Arithmetic", "Comparison", "Logical"],
-    },
-    { title: "JS Loops", subtopics: ["for", "while", "do-while"] },
-    {
-      title: "JS Functions",
-      subtopics: ["Function Declaration", "Arrow Functions", "Callbacks"],
-    },
-    {
-      title: "JavaScript Basics",
-      subtopics: ["Introduction", "Syntax", "Hello World"],
-    },
-    {
-      title: "JS Variables & Datatypes",
-      subtopics: ["var, let, const", "Primitive Types", "Type Conversion"],
-    },
-    {
-      title: "JS Operators",
-      subtopics: ["Arithmetic", "Comparison", "Logical"],
-    },
-    { title: "JS Loops", subtopics: ["for", "while", "do-while"] },
-    {
-      title: "JS Functions",
-      subtopics: ["Function Declaration", "Arrow Functions", "Callbacks"],
-    },
-    {
-      title: "JavaScript Basics",
-      subtopics: ["Introduction", "Syntax", "Hello World"],
-    },
-    {
-      title: "JS Variables & Datatypes",
-      subtopics: ["var, let, const", "Primitive Types", "Type Conversion"],
-    },
-    {
-      title: "JS Operators",
-      subtopics: ["Arithmetic", "Comparison", "Logical"],
-    },
-    { title: "JS Loops", subtopics: ["for", "while", "do-while"] },
-    {
-      title: "JS Functions",
-      subtopics: ["Function Declaration", "Arrow Functions", "Callbacks"],
-    },
-    {
-      title: "JavaScript Basics",
-      subtopics: ["Introduction", "Syntax", "Hello World"],
-    },
-    {
-      title: "JS Variables & Datatypes",
-      subtopics: ["var, let, const", "Primitive Types", "Type Conversion"],
-    },
-    {
-      title: "JS Operators",
-      subtopics: ["Arithmetic", "Comparison", "Logical"],
-    },
-    { title: "JS Loops", subtopics: ["for", "while", "do-while"] },
-    {
-      title: "JS Functions",
-      subtopics: ["Function Declaration", "Arrow Functions", "Callbacks"],
-    },
-  ];
+const Sidebar = () => {
+  const navigate = useNavigate();
 
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleDropdown = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+  // Function to navigate when a topic is clicked
+  const handleNavigation = (link) => {
+    navigate(link);
   };
 
   return (
-    <div className="py-3 pl-0 pr-0 min-w-40 border-r border-gray-200 h-screen bg-white">
+    <div className="py-3 pl-0 pr-0 min-w-40 w-[20%] border-r border-gray-200 h-screen bg-white">
       <h2 className="p-2 text-2xl font-bold text-red-600 border-b border-gray-300 sticky top-0 bg-white">
-        varCODE JavaScript Tutorial
+        varCODE HTML Tutorial
       </h2>
 
       <div className="h-[calc(100vh-50px)] overflow-y-auto custom-scrollbar p-1">
         <ul className="space-y-2 w-full hover:cursor-pointer">
-          {jsTopics.map((topic, index) => (
-            <li key={index} className="relative">
-              <div
-                className={`flex justify-between items-center p-2 hover:font-medium cursor-pointer transition-all ${
-                  openIndex === index
-                    ? "bg-red-200 font-bold"
-                    : "hover:bg-red-200"
-                }`}
-                onClick={() => toggleDropdown(index)}
+          {htmlTopics && htmlTopics.length > 0 ? (
+            htmlTopics.map((topic, index) => (
+              <li
+                key={index}
+                className="p-2 hover:bg-red-200 hover:font-medium cursor-pointer transition-all"
+                onClick={() => handleNavigation(topic.link)}
               >
-                <span onClick={() => setSelectedTopic(topic.title)}>
-                  {topic.title}
-                </span>
-                <span>
-                  {openIndex === index ? <IoIosArrowUp /> : <IoIosArrowDown />}
-                </span>
-              </div>
-
-              {openIndex === index && (
-                <ul className="pl-0  text-sm bg-gray-100">
-                  {topic.subtopics.map((sub, subIndex) => (
-                    <li
-                      key={subIndex}
-                      className="p-1 pl-2 text-base hover:bg-red-200 hover:font-medium"
-                      onClick={() => setSelectedTopic(sub)}
-                    >
-                      {sub}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
+                {topic.title}
+              </li>
+            ))
+          ) : (
+            <p className="p-2 text-gray-500">Loading topics...</p>
+          )}
         </ul>
       </div>
     </div>
